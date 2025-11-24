@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How to Cook Injera — Accessibility Test Page (Fixed)</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:1.5rem;color:#111}
+    header,main,footer{max-width:900px;margin:auto}
+    img{max-width:100%;height:auto;border-radius:8px}
+    .hero{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center}
+    figure{margin:0}
+    figcaption{font-size:0.9rem;color:#444}
+    .ingredients, .steps{background:#f7f7f9;padding:1rem;border-radius:8px;margin-top:1rem}
+    code{background:#eee;padding:0.1rem 0.3rem;border-radius:4px}
+    .note{font-size:0.95rem;color:#005a9c}
+    .test-area{background:#fff8e1;border:1px solid #ffd54f;padding:1rem;border-radius:8px;margin-top:1rem}
+    .results{margin-top:0.5rem;padding:0.5rem;background:#f3f3f3;border-radius:6px}
+    button{cursor:pointer;padding:0.5rem 0.75rem;border-radius:6px;border:1px solid #ccc;background:#fff}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="page-title">How to Cook Injera (Test Page)</h1>
+    <p class="note">This page is intentionally simple and semantic for testing with screen readers and accessibility tools. A defensive stub for external integrations has been added to avoid runtime errors (e.g., <code>Zotero.Schema.init</code>).</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="intro-heading">
+      <div>
+        <h2 id="intro-heading">Introduction</h2>
+        <p>Injera is a traditional Ethiopian flatbread with a soft, spongy texture. This sample page contains real markup (headings, lists, figures, and progressive cooking steps) and images so you can test how a screen reader announces headings, images (with <code>alt</code> text), lists, and buttons.</p>
+      </div>
+      <figure>
+        <img src="https://via.placeholder.com/900x500?text=Injera+on+Plate" alt="A round injera flatbread folded on a plate, with a small dipping bowl beside it" width="900" height="500">
+        <figcaption>Injera served on a communal plate.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="ingredients-heading">
+      <h2 id="ingredients-heading">Ingredients</h2>
+      <div class="ingredients" role="region" aria-label="Ingredients list">
+        <h3>Basic Ingredients</h3>
+        <ul>
+          <li>Teff flour — 2 cups (or mix teff + all-purpose for experiment)</li>
+          <li>Water — about 3 cups (adjust for batter consistency)</li>
+          <li>Starter/Yeast — 1/4 teaspoon active dry yeast (or traditional ersho starter)</li>
+          <li>Salt — 1 teaspoon</li>
+        </ul>
+        <p><strong>Note:</strong> Measurements are approximate — this page is for testing markup, not a definitive recipe.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="preparation-heading">
+      <h2 id="preparation-heading">Preparation</h2>
+      <div class="steps" role="region" aria-label="Preparation steps">
+        <h3 id="step-1">Step 1 — Make the Batter</h3>
+        <p>Combine the teff flour and water in a large bowl, whisk until smooth. Stir in the yeast or starter. Cover the bowl with a cloth and leave at room temperature to ferment for 24–48 hours until bubbly and slightly sour.</p>
+        <figure>
+          <img src="https://via.placeholder.com/640x360?text=Batter+in+Bowl" alt="Mixing bowl with injera batter showing bubbles on the surface from fermentation" width="640" height="360">
+          <figcaption>Batter after fermentation — bubbles indicate readiness.</figcaption>
+        </figure>
+
+        <h3 id="step-2">Step 2 — Heat the Pan</h3>
+        <p>Heat a non-stick or cast-iron griddle over medium-high heat. You want the surface hot but not smoking. Lightly grease if necessary.</p>
+        <figure>
+          <img src="https://via.placeholder.com/640x360?text=Griddle+Heat" alt="A large round griddle heating on a stovetop" width="640" height="360">
+          <figcaption>Preheat the griddle to medium-high heat.</figcaption>
+        </figure>
+
+        <h3 id="step-3">Step 3 — Cook the Injera</h3>
+        <ol>
+          <li>Pour a ladleful of batter onto the hot griddle, starting from the outside and spiraling in to form a circle about 10–12 inches wide.</li>
+          <li>Cover the pan and let steam for 1–2 minutes until the surface is set and many small holes (eyes) form.</li>
+          <li>Do not flip — injera cooks on one side. Remove when edges lift slightly.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section aria-labelledby="serving-heading">
+      <h2 id="serving-heading">Serving & Storage</h2>
+      <h3 id="serving-ideas">Serving Ideas</h3>
+      <p>Serve injera with stews (wot), salads, or use it as a plate to pick up food.</p>
+      <figure>
+        <img src="https://via.placeholder.com/900x500?text=Injera+Served+with+Wot" alt="Injera used as a base for several stews, with colorful vegetables and meat on top" width="900" height="500">
+        <figcaption>Injera commonly serves as both plate and utensil.</figcaption>
+      </figure>
+
+      <h3 id="storage">Storage</h3>
+      <p>Keep injera in a breathable container at room temperature for 1–2 days or refrigerate for longer storage. Reheat lightly on a griddle before serving.</p>
+    </section>
+
+    <section aria-labelledby="testing-heading">
+      <h2 id="testing-heading">Accessibility & Testing Notes</h2>
+      <p>This section contains elements useful for accessibility testing:</p>
+      <ul>
+        <li><strong>Headings:</strong> Multiple levels (h1, h2, h3) to test landmark navigation and rotor behavior for screen readers.</li>
+        <li><strong>Images with alt:</strong> Each image includes a descriptive <code>alt</code> attribute and a <code>&lt;figcaption&gt;</code> to check how both are announced.</li>
+        <li><strong>Lists:</strong> Ordered and unordered lists to test list verbosity.</li>
+        <li><strong>Regions:</strong> Regions with <code>role="region"</code> and aria-labels to test quick navigation.</li>
+      </ul>
+
+      <div class="test-area" aria-labelledby="smoke-tests">
+        <h3 id="smoke-tests">Automated Smoke Tests (client-side)</h3>
+        <p>Click <strong>Run tests</strong> to perform quick checks useful for accessibility QA. These are lightweight and deterministic — good for verifying this test page in CI or locally.</p>
+        <p>
+          <button id="run-tests">Run tests</button>
+          <button id="reset-results">Reset</button>
+        </p>
+        <div id="results" class="results" aria-live="polite" aria-atomic="true">No results yet.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Test file: <code>injera-cook-test.html</code> — copy into your GitHub repo and open in a browser. Use VoiceOver (Mac), NVDA (Windows), or a browser accessibility extension to test reading order and announcements.</p>
+  </footer>
+
+  <!-- Defensive stub: if the environment expects Zotero and it's not present, create a safe no-op stub
+       This prevents runtime errors like: TypeError: undefined is not an object (evaluating 'Zotero.Schema.init')
+       We only create the stub when Zotero is completely undefined to avoid overwriting a real integration. -->
+  <script>
+    (function(){
+      try{
+        if (typeof window.Zotero === 'undefined'){
+          window.Zotero = {
+            Schema: {
+              init: function(){
+                // No-op stub: log once to aid debugging but don't throw.
+                console.warn('Zotero stub: Schema.init called — no Zotero integration present.');
+                return Promise.resolve();
+              }
+            },
+            // Add any other lightweight stubs if downstream code expects them
+            Debug: {
+              log: function(){/* no-op */}
+            }
+          };
+        } else if (!window.Zotero.Schema || typeof window.Zotero.Schema.init !== 'function'){
+          // Ensure Schema.init exists as a safe no-op if Zotero object exists but not Schema
+          window.Zotero.Schema = window.Zotero.Schema || {};
+          if (typeof window.Zotero.Schema.init !== 'function'){
+            window.Zotero.Schema.init = function(){
+              console.warn('Zotero.Schema.init stubbed to avoid runtime error.');
+              return Promise.resolve();
+            };
+          }
+        }
+      }catch(e){
+        // Defensive: never let stub creation crash the page
+        console.error('Error creating Zotero stub.', e);
+      }
+    })();
+  </script>
+
+  <script>
+    // Simple client-side smoke tests for this page. These are deterministic and pure DOM checks.
+    (function(){
+      const resultsEl = document.getElementById('results');
+      const runBtn = document.getElementById('run-tests');
+      const resetBtn = document.getElementById('reset-results');
+
+      function runTests(){
+        const results = [];
+        // 1) Heading structure: must have exactly one h1
+        const h1s = document.getElementsByTagName('h1');
+        results.push({name:'H1 count', ok: h1s.length===1, detail: h1s.length+' h1 element(s) found'});
+
+        // 2) Images: every <img> should have non-empty alt
+        const imgs = Array.from(document.getElementsByTagName('img'));
+        const imgsWithoutAlt = imgs.filter(i => !i.hasAttribute('alt') || i.getAttribute('alt').trim()==='');
+        results.push({name:'Images alt text', ok: imgsWithoutAlt.length===0, detail: imgsWithoutAlt.length+' image(s) missing alt text'});
+
+        // 3) Regions: at least one role="region"
+        const regions = document.querySelectorAll('[role="region"]');
+        results.push({name:'Regions present', ok: regions.length>0, detail: regions.length+' region(s) found'});
+
+        // 4) Landmark roles: main must exist
+        const mains = document.getElementsByTagName('main');
+        results.push({name:'Main landmark', ok: mains.length===1, detail: mains.length+' <main> element(s) found'});
+
+        // 5) ARIA labels: sample check for aria-labelledby references resolving
+        const ariaRefs = Array.from(document.querySelectorAll('[aria-labelledby]'));
+        const brokenRefs = ariaRefs.map(el => {
+          const id = el.getAttribute('aria-labelledby');
+          if (!document.getElementById(id)) return id;
+          return null;
+        }).filter(Boolean);
+        results.push({name:'aria-labelledby targets', ok: brokenRefs.length===0, detail: brokenRefs.length ? ('Broken ids: '+brokenRefs.join(', ')) : 'All references resolve'});
+
+        // Build output
+        const lines = results.map(r => `\u2022 ${r.name}: ${r.ok ? 'PASS' : 'FAIL'} — ${r.detail}`);
+        resultsEl.textContent = lines.join('\n');
+        // add simple color hints
+        resultsEl.style.borderLeft = results.every(r=>r.ok) ? '4px solid #2e7d32' : '4px solid #c62828';
+      }
+
+      runBtn.addEventListener('click', runTests);
+      resetBtn.addEventListener('click', function(){ resultsEl.textContent='No results yet.'; resultsEl.style.borderLeft='none'; });
+    })();
+  </script>
+
+</body>
+</html>
